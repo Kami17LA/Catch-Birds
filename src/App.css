@@ -5,6 +5,17 @@ html, body {
   font-size: 1.3rem;
 }
 
+.box-container{
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  height: 100vh;
+}
+
 .card,
 .face {
   width: 6rem;

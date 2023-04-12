@@ -3,70 +3,29 @@ import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
 import aveAzul from "./images/aveAzul.png";
 import aveRosa from "./images/aveRosa.png";
-import casaPajaros from "./images/casaPajaros.png"
+import Card from './Card';
+import Header from './Header';
 
 function App() {
 
-  const card = document.querySelector('.card');
+  const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-  const clickCard = (e) => {
-    e.currentTarget.style.transform = "rotateY(180deg)";
-  }
+  const cartas = numeros.map((numero) => {
+    const esPar = numero % 2 === 0;
+    const ave = esPar ? aveRosa : aveAzul;
+
+    return (
+      <>
+        <Card bird = {ave}></Card>
+      </>
+    );
+  });
 
   return (
     <>
+    <Header></Header>
     <Container className='box-container'>
-      <Row>
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveRosa} alt='img-rosa'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveAzul} alt='img-azul'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveRosa} alt='img-rosa'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-      </Row>
-      <Row>
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveAzul} alt='img-azul'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveRosa} alt='img-rosa'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveAzul} alt='img-azul'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-      </Row>
-      <Row>
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveRosa} alt='img-rosa'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveAzul} alt='img-azul'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-
-        <div className='card' onClick={clickCard}>
-          <Col className='face birds' sm={4}><img src={aveRosa} alt='img-rosa'></img></Col>
-          <Col className='face casa-pajaros' sm={4}><img src={casaPajaros} alt='casa-pajaros'></img></Col>
-        </div>
-      </Row>
+      {cartas}
     </Container>
     </>
   );
