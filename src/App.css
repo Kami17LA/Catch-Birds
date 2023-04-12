@@ -1,38 +1,47 @@
-.App {
-  text-align: center;
+html, body {
+  background-image: url(./images/cielo.jpg);
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.3rem;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.card,
+.face {
+    width: 8.5rem;
+    height: 8.5rem;
+    cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  flex: 15%;
+  margin: 1rem;
+  width: 1rem;
+  max-width: 20%;
+  min-height: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.face{
+  position: absolute;
+  backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.birds {
+  transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.casa-pajaros {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
